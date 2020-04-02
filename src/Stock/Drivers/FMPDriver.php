@@ -3,6 +3,11 @@
 
 class FMPDriver implements StockInterface
 {
+    public function __construct($method, $company)
+    {
+        return [$method, $company];
+    }
+
     public function company_profile()
     {
         // TODO: Implement company_profile() method.

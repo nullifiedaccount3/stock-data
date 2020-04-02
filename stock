@@ -1,0 +1,36 @@
+<?php
+
+include 'vendor/autoload.php';
+
+use Fleetsu\Stock\Stock;
+
+$valid_inputs = [
+    [
+        'stock'
+    ],
+    get_class_methods(StockInterface::class)
+];
+
+/**
+ * Read inputs
+ */
+
+foreach ($argv as $index => $input) {
+    if ($index + 1 > count($valid_inputs)) {
+        break;
+    }
+    try {
+        if (in_array($input, $valid_inputs[$index])) {
+            continue;
+        } else {
+            throw new StockInputException('');
+        }
+    } catch (StockInputException $exception) {
+        echo "Invalid input. See documentation.\n";
+        break;
+    }
+}
+
+$fmp_driver = new FMPDriver($argv[1], $argv[2]);
+$stock = new Stock($fmp_driver);
+print_r($stock);

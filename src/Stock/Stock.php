@@ -6,8 +6,9 @@ use StockInterface;
 
 class Stock implements StockInterface
 {
-    public function __construct()
+    public function __construct($stock_driver)
     {
+        return $stock_driver;
     }
 
     public function company_profile()
