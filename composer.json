@@ -1,0 +1,12 @@
+{
+    "name": "bhargav/fleetsu",
+    "license": "MIT",
+    "description": "Library for stock data",
+    "authors": [
+        {
+            "name": "Bhargav Nanekalva",
+            "email": "bhargav3@gmail.com"
+        }
+    ],
+    "require": {}
+}
