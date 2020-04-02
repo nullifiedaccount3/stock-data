@@ -1,12 +1,26 @@
 {
-    "name": "bhargav/fleetsu",
-    "license": "MIT",
-    "description": "Library for stock data",
-    "authors": [
-        {
-            "name": "Bhargav Nanekalva",
-            "email": "bhargav3@gmail.com"
-        }
+  "name": "bhargav/fleetsu",
+  "license": "MIT",
+  "description": "Library for stock data",
+  "authors": [
+    {
+      "name": "Bhargav Nanekalva",
+      "email": "bhargav3@gmail.com"
+    }
+  ],
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
     ],
-    "require": {}
+    "psr-4": {
+      "Fleetsu\\": "src/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit --bootstrap vendor/autoload.php tests"
+  }
 }
