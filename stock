@@ -31,6 +31,15 @@ foreach ($argv as $index => $input) {
     }
 }
 
-$fmp_driver = new FMPDriver($argv[1], $argv[2]);
+$companies = explode(',', strtoupper($argv[2]));
+$fmp_driver = new FMPDriver($companies);
 $stock = new Stock($fmp_driver);
-print_r($stock);
+
+switch ($argv[1]) {
+    case 'company_profile':
+        echo print_r($stock->company_profile());
+        break;
+    case 'company_quote':
+        echo print_r($stock->company_quote());
+        break;
+}

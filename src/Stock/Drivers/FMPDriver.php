@@ -1,21 +1,38 @@
 <?php
 
 
-class FMPDriver implements StockInterface
+class FMPDriver extends StockServiceProvider
 {
-    public function __construct($method, $company)
-    {
-        return [$method, $company];
-    }
+    /**
+     * @var string
+     */
+    private $host = 'https://financialmodelingprep.com';
 
+    /**
+     * @var string
+     */
+    private $company_profile_endpoint = '/api/v3/company/profile/';
+
+    /**
+     * @var string
+     */
+    private $company_quote_endpoint = '/api/v3/quote/';
+
+    /**
+     * @return mixed
+     */
     public function company_profile()
     {
-        // TODO: Implement company_profile() method.
+        $this->companies = implode(',', $this->companies);
+        return json_decode($this::get_data($this->host . $this->company_profile_endpoint . $this->companies), true);
     }
 
+    /**
+     * @return mixed
+     */
     public function company_quote()
     {
-        // TODO: Implement company_quote() method.
+        $this->companies = implode(',', $this->companies);
+        return json_decode($this::get_data($this->host . $this->company_quote_endpoint . $this->companies), true);
     }
-
 }

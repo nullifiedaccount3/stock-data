@@ -3,21 +3,24 @@
 namespace Fleetsu\Stock;
 
 use StockInterface;
+use StockServiceProvider;
 
 class Stock implements StockInterface
 {
-    public function __construct($stock_driver)
+    private $stock_driver;
+
+    public function __construct(StockServiceProvider $stock_driver)
     {
-        return $stock_driver;
+        $this->stock_driver = $stock_driver;
     }
 
     public function company_profile()
     {
-        // TODO: Implement company_profile() method.
+        return $this->stock_driver->company_profile();
     }
 
     public function company_quote()
     {
-        // TODO: Implement company_quote() method.
+        return $this->stock_driver->company_quote();
     }
 }
