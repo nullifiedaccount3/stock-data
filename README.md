@@ -25,12 +25,17 @@ Fetch stock data using any driver.
 
 **COMPANY_STOCK_CODE** is case in-sensitive 
 
-# Data Drivers
-## Financial Modeling Prep API driver
+## Tests
+
+Run `composer test` which automatically tests everything under `tests`
+
+## Data Drivers
+### Financial Modeling Prep API driver
 - Edit `src/Stock/Drivers/FMPDriver.php`
 - To add new methods, add them first in `StockInterface`
 
-## Custom driver
+### Custom driver
+
 To create a customer stock data driver
 - Create the new driver file in `src/Stock/Drivers`
 - Simply extend `StockServiceProvider` and implment the necessary methods  
