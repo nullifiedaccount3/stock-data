@@ -7,7 +7,10 @@ use StockServiceProvider;
 
 class Stock implements StockInterface
 {
-    private $stock_driver;
+    /**
+     * @var StockServiceProvider
+     */
+    private StockServiceProvider $stock_driver;
 
     public function __construct(StockServiceProvider $stock_driver)
     {

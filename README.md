@@ -38,4 +38,5 @@ Run `composer test` which automatically tests everything under `tests`
 
 To create a customer stock data driver
 - Create the new driver file in `src/Stock/Drivers`
-- Simply extend `StockServiceProvider` and implment the necessary methods  
+- Simply extend `StockServiceProvider` and implement the necessary methods
+  
