@@ -8,24 +8,29 @@ Fetch stock data using any driver.
 
 ## Usage
 
-    Syntax: `php stock <command> <parameter1> <parameter2>` 
-    Example: `php stock profile googl`
+    Syntax: `php stock.php <command> <parameter1> <parameter2>` 
+    Example: `php stock.php profile googl`
 
 ### Company Profile command
 
-    Syntax: `php stock company_profile COMPANY_STOCK_CODE`
-    Example: `php stock company_profile googl`
+    Syntax: `php stock.php company_profile COMPANY_STOCK_CODE`
+    Example: `php stock.php company_profile googl,fb`
 
 **COMPANY_STOCK_CODE** is case in-sensitive
 
 ### Company Quote command
 
-    Syntax: `php stock company_quote COMPANY_STOCK_CODE`
-    Example: `php stock company_quote googl`
+    Syntax: `php stock.php company_quote COMPANY_STOCK_CODE`
+    Example: `php stock.php company_quote googl,fb`
 
 **COMPANY_STOCK_CODE** is case in-sensitive 
 
 # Data Drivers
 ## Financial Modeling Prep API driver
+- Edit `src/Stock/Drivers/FMPDriver.php`
+- To add new methods, add them first in `StockInterface`
 
 ## Custom driver
+To create a customer stock data driver
+- Create the new driver file in `src/Stock/Drivers`
+- Simply extend `StockServiceProvider` and implment the necessary methods  
